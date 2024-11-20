@@ -1,36 +1,58 @@
 package model;
 
 public class PrescricaoMedica {
-    private String medicamento;
+    private int crm;
+    private String cpfPaciente;
+    private Medicamento medicamento;
+    private int duracao;
     private String dosagem;
 
-
-    public PrescricaoMedica(String medicamento, String dosagem) {
+    // Construtor para criar uma prescrição médica
+    public PrescricaoMedica(int crm, String cpfPaciente, Medicamento medicamento, int duracao) {
+        this.crm = crm;
+        this.cpfPaciente = cpfPaciente;
         this.medicamento = medicamento;
-        this.dosagem = dosagem;
-    }
-
-    public String getMedicamento() {
-        return medicamento;
+        this.duracao = duracao;
     }
 
     public String getDosagem() {
         return dosagem;
     }
 
-    public void setMedicamento(String medicamento) {
-        this.medicamento = medicamento;
-    }
-
     public void setDosagem(String dosagem) {
         this.dosagem = dosagem;
     }
 
-    @Override
-    public String toString() {
-        return "PrescricaoMedica{" +
-                "medicamento='" + medicamento + '\'' +
-                ", dosagem='" + dosagem + '\'' +
-                '}';
+    // Getters e Setters
+    public int getCrm() {
+        return crm;
+    }
+
+    public void setCrm(int crm) {
+        this.crm = crm;
+    }
+
+    public String getCpfPaciente() {
+        return cpfPaciente;
+    }
+
+    public void setCpfPaciente(String cpfPaciente) {
+        this.cpfPaciente = cpfPaciente;
+    }
+
+    public Medicamento getMedicamento() {
+        return medicamento;
+    }
+
+    public void setMedicamento(Medicamento medicamento) {
+        this.medicamento = medicamento;
+    }
+
+    public int getDuracao() {
+        return duracao;
+    }
+
+    public void setDuracao(int duracao) {
+        this.duracao = duracao;
     }
 }

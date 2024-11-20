@@ -27,7 +27,7 @@ public class MedicamentoController {
         String data = scanner.nextLine();
 
 
-        Medicamento medicamento = new Medicamento(nome,  dosagem, frequencia, descricao,data);
+        Medicamento medicamento = new Medicamento(nome);
         medicamentos.add(medicamento);
         System.out.println("Medicamento registrado com sucesso!");
     }

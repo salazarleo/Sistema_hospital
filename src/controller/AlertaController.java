@@ -1,31 +1,26 @@
 package controller;
 
 import model.Alerta;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class AlertaController {
     private List<Alerta> alertas = new ArrayList<>();
 
-    public void registrarAlerta(Scanner scanner) {
-        System.out.print("Digite o tipo do alerta: ");
-        String tipo = scanner.nextLine();
-        System.out.print("Digite a mensagem do alerta: ");
-        String mensagem = scanner.nextLine();
-
-        Alerta alerta = new Alerta(tipo, mensagem);
+    // Método para emitir um alerta
+    public void emitirAlerta(Alerta alerta) {
         alertas.add(alerta);
-        System.out.println("Alerta registrado com sucesso!");
+        System.out.println("Alerta emitido: " + alerta.getMensagem());
+        // Aqui, você pode adicionar mais lógica para enviar um alerta por e-mail, SMS, etc.
     }
 
-    public void listarAlertas() {
+    // Método para visualizar alertas
+    public void visualizarAlertas() {
         if (alertas.isEmpty()) {
             System.out.println("Nenhum alerta registrado.");
         } else {
             for (Alerta alerta : alertas) {
-                System.out.println(alerta);
+                System.out.println("Tipo: " + alerta.getTipo() + ", Mensagem: " + alerta.getMensagem());
             }
         }
     }

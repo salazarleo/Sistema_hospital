@@ -1,5 +1,6 @@
 package controller;
 
+import model.Medicamento;
 import model.Medico;
 import model.Paciente;
 import model.PrescricaoMedica;
@@ -114,13 +115,16 @@ public class MedicoController {
     }
 
     // Método para prescrever medicamento
-    public void prescreverMedicamento(int crm, String cpfPaciente, String nomeMedicamento, String dosagem) {
+    public void prescreverMedicamento(int crm, String cpfPaciente, String nomeMedicamento, String dosagem, String frequencia, String descricao, String data) {
         Medico medico = consultarMedico(crm);
         Paciente paciente = consultarPaciente(cpfPaciente);
 
         if (medico != null && paciente != null) {
+            // Criar o objeto Medicamento
+            Medicamento medicamento = new Medicamento(nomeMedicamento);
+
             // Criar a prescrição
-            PrescricaoMedica prescricao = new PrescricaoMedica(nomeMedicamento, dosagem);
+            PrescricaoMedica prescricao = new PrescricaoMedica(crm, cpfPaciente, medicamento, 30); // Considerar a duração como 30, ou ajustar conforme necessário
             medico.adicionarPrescricao(prescricao);
             paciente.adicionarPrescricao(prescricao);
             prescricoes.add(prescricao);

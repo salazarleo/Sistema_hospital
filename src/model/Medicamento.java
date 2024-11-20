@@ -2,21 +2,19 @@ package model;
 
 public class Medicamento {
     private String nome;
-    private String dosagem;
     private String frequencia;
     private String descricao;
     private String data;
 
-
-    public Medicamento(String nome, String dosagem, String frequencia, String descricao, String data) {
+    // Construtor
+    public Medicamento(String nome) {
         this.nome = nome;
-        this.dosagem = dosagem;
         this.frequencia = frequencia;
         this.descricao = descricao;
         this.data = data;
     }
 
-
+    // Getters e Setters
     public String getNome() {
         return nome;
     }
@@ -25,13 +23,6 @@ public class Medicamento {
         this.nome = nome;
     }
 
-    public String getDosagem() {
-        return dosagem;
-    }
-
-    public void setDosagem(String dosagem) {
-        this.dosagem = dosagem;
-    }
 
     public String getFrequencia() {
         return frequencia;
@@ -55,16 +46,5 @@ public class Medicamento {
 
     public void setData(String data) {
         this.data = data;
-    }
-
-    @Override
-    public String toString() {
-        return "Medicamento{" +
-                "nome='" + nome + '\'' +
-                ", dosagem='" + dosagem + '\'' +
-                ", frequencia='" + frequencia + '\'' +
-                ", descricao='" + descricao + '\'' +
-                ", data='" + data + '\'' +
-                '}';
     }
 }

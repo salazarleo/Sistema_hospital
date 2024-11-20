@@ -8,14 +8,16 @@ public class Paciente {
     private int idade;
     private String cpf;
     private List<PrescricaoMedica> prescricoes;
-    private List<Dispositivo> dispositivos; // Adicionando a lista de dispositivos
+    private List<Dispositivo> dispositivos; // Lista de dispositivos
+    private Medico medico; // Referência ao médico associado ao paciente
 
+    // Construtor
     public Paciente(String nome, int idade, String cpf) {
         this.nome = nome;
         this.idade = idade;
         this.cpf = cpf;
         this.prescricoes = new ArrayList<>();
-        this.dispositivos = new ArrayList<>(); // Inicializando a lista de dispositivos
+        this.dispositivos = new ArrayList<>();
     }
 
     // Getters e Setters
@@ -47,6 +49,14 @@ public class Paciente {
         this.prescricoes.add(prescricao); // Adiciona a prescrição à lista do paciente
     }
 
+    public Medico getMedico() {
+        return this.medico; // Retorna o médico associado ao paciente
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico; // Associa um médico ao paciente
+    }
+
     @Override
     public String toString() {
         return "Paciente{" +
@@ -54,7 +64,8 @@ public class Paciente {
                 ", idade=" + idade +
                 ", cpf='" + cpf + '\'' +
                 ", prescricoes=" + prescricoes +
-                ", dispositivos=" + dispositivos + // Incluindo dispositivos no toString
+                ", dispositivos=" + dispositivos +
+                ", medico=" + medico + // Incluindo o médico no toString
                 '}';
     }
 }

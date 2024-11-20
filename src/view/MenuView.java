@@ -20,7 +20,6 @@ public class MenuView {
     private final ConsultaController consultaController = new ConsultaController();
     private final DispositivoController dispositivoController = new DispositivoController(pacienteController.getPacientes());
 
-
     public void exibirMenu() {
         int opcao;
 
@@ -140,8 +139,6 @@ public class MenuView {
         dispositivoController.vincularDispositivo(cpfPaciente, idDispositivo);
     }
 
-
-
     private void agendarConsulta() {
         int opcao;
 
@@ -221,10 +218,8 @@ public class MenuView {
         System.out.print("Digite a especialidade do médico: ");
         String especialidade = scanner.nextLine();
 
-
         System.out.print("Digite o email do médico: ");
         String email = scanner.nextLine();
-
 
         System.out.print("Digite o telefone do médico: ");
         String telefone = scanner.nextLine();
@@ -262,28 +257,31 @@ public class MenuView {
         String nomeMedicamento = scanner.nextLine();
 
         System.out.print("Digite a dosagem do medicamento: ");
-        String dosagemMedicamento = scanner.nextLine();
+        String dosagem = scanner.nextLine();
 
-        System.out.print("Digite a frequência do medicamento: ");
-        String frequencia = scanner.nextLine();
+        System.out.print("Digite a duração do tratamento (em dias): ");
+        int duracao = scanner.nextInt();
+        scanner.nextLine();  // Limpar o buffer
 
-        System.out.print("Digite a descrição do medicamento: ");
-        String descricao = scanner.nextLine();
+// Criando o objeto Medicamento com o nome e a dosagem
+        Medicamento medicamento = new Medicamento(nomeMedicamento);
 
-        System.out.print("Digite a data do medicamento: ");
-        String data = scanner.nextLine();
+// Criando o objeto PrescricaoMedica com crm, cpfPaciente, medicamento e duracao
+        PrescricaoMedica prescricaoMedica = new PrescricaoMedica(crm, cpfPaciente, medicamento, duracao);
 
-        Medicamento medicamento = new Medicamento(nomeMedicamento, dosagemMedicamento, frequencia, descricao, data);
-        PrescricaoMedica prescricao = new PrescricaoMedica(medicamento.getNome(), medicamento.getDosagem());
+// Adicionando a prescrição médica através do MedicoController
+        PrescricaoMedica prescricao = new PrescricaoMedica(crm, cpfPaciente, medicamento, duracao);
 
-        medicoController.adicionarPrescricao(crm, cpfPaciente, prescricao);
+        System.out.println("\nPrescrição médica registrada com sucesso!");
     }
 
     private int lerOpcao() {
-        while (!scanner.hasNextInt()) {
-            System.out.println("Por favor, insira um número válido para a opção.");
-            scanner.next(); // descarta a entrada inválida
+        int opcao = -1;
+        try {
+            opcao = scanner.nextInt();
+        } catch (Exception e) {
+            scanner.nextLine(); // Limpar o buffer
         }
-        return scanner.nextInt();
+        return opcao;
     }
 }

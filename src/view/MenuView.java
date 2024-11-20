@@ -1,6 +1,7 @@
 package view;
 
 import controller.ConsultaController;
+import controller.DispositivoController;
 import controller.PacienteController;
 import controller.MedicoController;
 import model.Medico;
@@ -17,6 +18,8 @@ public class MenuView {
     private final PacienteController pacienteController = new PacienteController();
     private final MedicoController medicoController = new MedicoController();
     private final ConsultaController consultaController = new ConsultaController();
+    private final DispositivoController dispositivoController = new DispositivoController(pacienteController.getPacientes());
+
 
     public void exibirMenu() {
         int opcao;
@@ -25,20 +28,19 @@ public class MenuView {
             System.out.println("\n----- MENU PRINCIPAL -----");
             System.out.println("1. Menu Pacientes");
             System.out.println("2. Menu Médicos");
-            System.out.println("3. Sair");
-            System.out.println("4. Agendar Consulta");
+            System.out.println("3. Menu Consultas");
+            System.out.println("4. Sair");
             System.out.print("\nEscolha uma opção: ");
-
             opcao = lerOpcao();
 
             switch (opcao) {
                 case 1 -> exibirMenuPacientes();
                 case 2 -> exibirMenuMedicos();
-                case 3 -> System.out.println("\nSaindo... Até logo!");
-                case 4 -> agendarConsulta();
+                case 3 -> agendarConsulta();
+                case 4 -> System.out.println("\nSaindo... Até logo!");
                 default -> System.out.println("\nOpção inválida. Por favor, tente novamente.");
             }
-        } while (opcao != 3);
+        } while (opcao != 4);
     }
 
     private void exibirMenuPacientes() {
@@ -49,7 +51,8 @@ public class MenuView {
             System.out.println("1. Registrar Paciente");
             System.out.println("2. Consultar Paciente");
             System.out.println("3. Listar Pacientes");
-            System.out.println("4. Voltar ao Menu Principal");
+            System.out.println("4. Menu Dispositivos");
+            System.out.println("5. Voltar ao Menu Principal");
             System.out.print("\nEscolha uma opção: ");
 
             opcao = lerOpcao();
@@ -58,16 +61,86 @@ public class MenuView {
                 case 1 -> pacienteController.registrarPaciente(scanner);
                 case 2 -> pacienteController.consultarPaciente(scanner);
                 case 3 -> pacienteController.listarPacientes();
-                case 4 -> System.out.println("\nVoltando ao Menu Principal...");
+                case 4 -> exibirMenuDispositivos();
+                case 5 -> System.out.println("\nVoltando ao Menu Principal...");
                 default -> System.out.println("\nOpção inválida. Por favor, tente novamente.");
             }
 
-            if (opcao != 4) {
+            if (opcao != 5) {
                 System.out.print("\nPressione 'Enter' para voltar ao menu de Pacientes...");
                 scanner.nextLine();
             }
-        } while (opcao != 4);
+        } while (opcao != 5);
     }
+
+    private void exibirMenuDispositivos() {
+        int opcao;
+
+        do {
+            System.out.println("\n----- MENU DISPOSITIVOS -----");
+            System.out.println("1. Cadastrar Dispositivo");
+            System.out.println("2. Visualizar Dispositivos");
+            System.out.println("3. Remover Dispositivo");
+            System.out.println("4. Vincular Dispositivo a Paciente");
+            System.out.println("5. Voltar ao Menu Pacientes");
+            System.out.print("\nEscolha uma opção: ");
+
+            opcao = lerOpcao();
+
+            switch (opcao) {
+                case 1 -> cadastrarDispositivo();
+                case 2 -> dispositivoController.visualizarDispositivos();
+                case 3 -> removerDispositivo();
+                case 4 -> vincularDispositivo();
+                case 5 -> System.out.println("\nVoltando ao Menu Pacientes...");
+                default -> System.out.println("\nOpção inválida. Por favor, tente novamente.");
+            }
+
+            if (opcao != 5) {
+                System.out.print("\nPressione 'Enter' para voltar ao menu de Dispositivos...");
+                scanner.nextLine();
+            }
+        } while (opcao != 5);
+    }
+
+    private void cadastrarDispositivo() {
+        System.out.println("\n----- CADASTRAR DISPOSITIVO -----");
+
+        System.out.print("Digite o tipo do dispositivo (ex: termômetro): ");
+        String tipo = scanner.next();
+
+        System.out.print("Digite a marca do dispositivo: ");
+        String marca = scanner.next();
+
+        System.out.print("Digite o modelo do dispositivo: ");
+        String modelo = scanner.next();
+
+        System.out.print("Digite o status (ativo/inativo): ");
+        String status = scanner.next();
+
+        System.out.print("Digite os valores de referência: ");
+        String valoresReferencia = scanner.next();
+
+        dispositivoController.cadastrarDispositivo(tipo, marca, modelo, status, valoresReferencia);
+    }
+
+    private void removerDispositivo() {
+        System.out.print("Digite o ID do dispositivo a ser removido: ");
+        int id = scanner.nextInt();
+        dispositivoController.removerDispositivo(id);
+    }
+
+    private void vincularDispositivo() {
+        System.out.print("Digite o CPF do paciente: ");
+        String cpfPaciente = scanner.next();
+
+        System.out.print("Digite o ID do dispositivo: ");
+        int idDispositivo = scanner.nextInt();
+
+        dispositivoController.vincularDispositivo(cpfPaciente, idDispositivo);
+    }
+
+
 
     private void agendarConsulta() {
         int opcao;

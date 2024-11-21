@@ -82,7 +82,7 @@ O projeto conta com testes unitários para garantir a qualidade do código e o f
 
 1. **Clone o repositório**:
    ```bash
-   git clone https://github.com/seu_usuario/seu_projeto.git
+   git clone https://github.com/salazarleo/Sistema_hospital
 2. **Compile o projeto**: 
 Use uma IDE como IntelliJ IDEA ou Eclipse para compilar as classes.
 3. **Execute os testes**:

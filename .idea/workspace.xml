@@ -5,13 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d70ff2e-e7d5-4043-9a94-0ba79df5958d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sistema.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistema.iml" beforeDir="false" afterPath="$PROJECT_DIR$/sistema.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/AlertaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ConsultaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/DispositivoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/MedicamentoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/MedicoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/MonitoramentoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/PacienteController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Alerta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Consulta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Dispositivo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Medicamento.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Medico.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Monitoramento.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Paciente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/PrescricaoMedica.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MenuView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +40,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "salazarleo"
+  }
 }]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/salazarleo/Sistema_hospital.git",
+    "accountId": "20772f22-e18d-437d-b1a9-4967d5aa15b6"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2p61dpO1R1eJNfXRS6FPpZObrzB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -42,8 +66,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.test.java in sistema.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -54,6 +83,47 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="test.java.view" />
+      <recent name="test.java.controller" />
+      <recent name="test.java.model" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="test.java in sistema" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sistema" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.java" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="meu-projeto" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="meu-projeto" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.test.java in sistema" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -71,6 +141,7 @@
       <option name="presentableId" value="Default" />
       <updated>1732071802659</updated>
       <workItem from="1732071803746" duration="28806000" />
+      <workItem from="1732149866564" duration="4304000" />
     </task>
     <servers />
   </component>

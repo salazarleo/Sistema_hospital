@@ -1,6 +1,5 @@
 package view;
 
-import controller.ConsultaController;
 import controller.DispositivoController;
 import controller.PacienteController;
 import controller.MedicoController;
@@ -17,7 +16,7 @@ public class MenuView {
     private final Scanner scanner = new Scanner(System.in);
     private final PacienteController pacienteController = new PacienteController();
     private final MedicoController medicoController = new MedicoController();
-    private final ConsultaController consultaController = new ConsultaController();
+    private final controller.ConsultaController consultaController = new controller.ConsultaController();
     private final DispositivoController dispositivoController = new DispositivoController(pacienteController.getPacientes());
 
     public void exibirMenu() {
@@ -266,11 +265,6 @@ public class MenuView {
 // Criando o objeto Medicamento com o nome e a dosagem
         Medicamento medicamento = new Medicamento(nomeMedicamento);
 
-// Criando o objeto PrescricaoMedica com crm, cpfPaciente, medicamento e duracao
-        PrescricaoMedica prescricaoMedica = new PrescricaoMedica(crm, cpfPaciente, medicamento, duracao);
-
-// Adicionando a prescrição médica através do MedicoController
-        PrescricaoMedica prescricao = new PrescricaoMedica(crm, cpfPaciente, medicamento, duracao);
 
         System.out.println("\nPrescrição médica registrada com sucesso!");
     }

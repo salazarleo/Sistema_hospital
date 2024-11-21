@@ -1,3 +1,5 @@
+package main.java.view;
+
 import view.MenuView;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
